@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux';
-
 const contactsInitialState = [];
 
 export const contactsReducer = (state = contactsInitialState, action) => {
@@ -15,7 +13,7 @@ export const contactsReducer = (state = contactsInitialState, action) => {
 
 const filtersInitialState = '';
 
-const filtersReducer = (state = filtersInitialState, action) => {
+export const filtersReducer = (state = filtersInitialState, action) => {
   switch (action.type) {
     case 'filters/setContactFilter':
       return action.payload;
@@ -23,8 +21,3 @@ const filtersReducer = (state = filtersInitialState, action) => {
       return state;
   }
 };
-
-export const rootReducer = combineReducers({
-  contacts: contactsReducer,
-  filters: filtersReducer,
-});
